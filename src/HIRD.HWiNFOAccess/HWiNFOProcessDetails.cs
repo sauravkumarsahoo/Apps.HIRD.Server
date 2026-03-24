@@ -38,8 +38,16 @@ namespace HIRD.HWiNFOAccess
             StringBuilder builder = new(capacity);
             IntPtr ptr = OpenProcess(ProcessAccessFlags.QueryLimitedInformation, false, _hwinfoProcess!.Id);
 
-            if (!QueryFullProcessImageName(ptr, 0, builder, ref capacity))
-                return String.Empty;
+            try
+            {
+                if (!QueryFullProcessImageName(ptr, 0, builder, ref capacity))
+                    return String.Empty;
+            }
+            finally
+            {
+                if (ptr != IntPtr.Zero)
+                    CloseHandle(ptr);
+            }
 
             _hwinfoProcessPath = builder.ToString();
 
@@ -77,5 +85,8 @@ namespace HIRD.HWiNFOAccess
          ProcessAccessFlags processAccess,
          bool bInheritHandle,
          int processId);
+
+        [DllImport(KernelDll, SetLastError = true)]
+        private static extern bool CloseHandle(IntPtr hObject);
     }
 }

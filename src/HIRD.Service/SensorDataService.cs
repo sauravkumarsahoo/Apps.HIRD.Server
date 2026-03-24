@@ -2,6 +2,7 @@ using Grpc.Core;
 using HIRD.HWiNFOAccess;
 using HIRD.Proto;
 using System.Net;
+using System.Threading;
 
 namespace HIRD.Service
 {
@@ -30,9 +31,12 @@ namespace HIRD.Service
             _logger.LogInformation("Request received to 'GetComputerInfo()' from {peer}.", context.GetHttpContext().Request.Host.Host);
 
             string settingsPath = HWiNFOProcessDetails.GetProcessSettingsPath();
-            string? sensorIntervalLineText = File.ReadAllLines(settingsPath).FirstOrDefault(x => x.StartsWith(SensorIntervalLine));
-            if (sensorIntervalLineText != null)
-                SensorInterval = int.Parse(sensorIntervalLineText[SensorIntervalLine.Length..]);
+            if (!string.IsNullOrEmpty(settingsPath) && File.Exists(settingsPath))
+            {
+                string? sensorIntervalLineText = File.ReadAllLines(settingsPath).FirstOrDefault(x => x.StartsWith(SensorIntervalLine));
+                if (sensorIntervalLineText != null)
+                    Volatile.Write(ref SensorInterval, int.Parse(sensorIntervalLineText[SensorIntervalLine.Length..]));
+            }
 
             return Task.FromResult(_hWiNFO.GetComputerInfo());
         }
@@ -48,16 +52,18 @@ namespace HIRD.Service
 
             while (!context.CancellationToken.IsCancellationRequested)
             {
-                var runTask = Task.Run(() =>
+                var data = _hWiNFO.GetReadingData();
+                if (data != null)
+                    await responseStream.WriteAsync(data);
+
+                try
                 {
-                    var data = _hWiNFO.GetReadingData();
-                    if (data != null)
-                        responseStream.WriteAsync(data);
-                });
-
-                var pollTask = Task.Delay(SensorInterval);
-
-                await Task.WhenAll(runTask, pollTask);
+                    await Task.Delay(Volatile.Read(ref SensorInterval), context.CancellationToken);
+                }
+                catch (OperationCanceledException)
+                {
+                    break;
+                }
             }
 
             var endTime = DateTime.Now;

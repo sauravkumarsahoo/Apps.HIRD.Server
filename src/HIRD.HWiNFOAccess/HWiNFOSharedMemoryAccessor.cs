@@ -358,7 +358,7 @@ namespace HIRD.HWiNFOAccess
         }
 
         private static Task? readGpuIdTask;
-        private static object gpuLoadLock = new();
+        private static readonly object gpuLoadLock = new();
 
         private void LoadGPUReadings(ReadingDataStream streamData)
         {
@@ -407,7 +407,7 @@ namespace HIRD.HWiNFOAccess
         }
 
         private static Task? reloadIDsTask;
-        private static object reloadLock = new();
+        private static readonly object reloadLock = new();
         private ReadingData? GetReading(ReadingSource? source)
         {
             if (source == null)

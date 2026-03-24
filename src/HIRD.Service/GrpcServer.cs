@@ -34,6 +34,12 @@ namespace HIRD.Service
             await _grpcHost.StopAsync(cancellationToken);
         }
 
+        public override void Dispose()
+        {
+            _grpcHost.Dispose();
+            base.Dispose();
+        }
+
         protected override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
             _logger?.LogInformation("Starting service");
