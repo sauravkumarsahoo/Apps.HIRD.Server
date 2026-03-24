@@ -20,7 +20,7 @@ echo:
 echo [ %publish_msg% ]
 echo:
 
-dotnet publish /p:Version=%v% --framework net6.0-windows --runtime win-x64 --configuration Release --no-self-contained
+dotnet publish /p:Version=%v% --framework net8.0-windows --runtime win-x64 --configuration Release --no-self-contained
 
 cd ..\..
 
@@ -33,11 +33,11 @@ echo:
 echo [ %deploy_msg% ]
 echo:
 
-git add .
-git commit -m "%deploy_msg%"
-git tag v%v%
-git push origin
-git push origin --tags
+::git add .
+::git commit -m "%deploy_msg%"
+::git tag v%v%
+::git push origin
+::git push origin --tags
 
 echo:
 echo:

@@ -7,7 +7,7 @@
 #define MyAppSettingsFile "HIRD.settings.json"
 #define MyAppPublisher "Saurav KS"
 #define MyAppURL "https://clicksrv.github.io/HIRD"
-#define CompileOutputPath ".\src\HIRD\bin\Release\net6.0-windows\win-x64\publish\"
+#define CompileOutputPath ".\src\HIRD\bin\Release\net8.0-windows\win-x64\publish\"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.

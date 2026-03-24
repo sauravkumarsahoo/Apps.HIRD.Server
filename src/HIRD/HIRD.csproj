@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net6.0-windows</TargetFramework>
+		<TargetFramework>net8.0-windows</TargetFramework>
 		<Authors>Saurav Kumar Sahoo (clicksrv)</Authors>
 		<Nullable>enable</Nullable>
 		<UseWindowsForms>true</UseWindowsForms>
@@ -14,6 +14,8 @@
 		<Optimization Condition="'$(CompileConfig)' == 'RELEASE'">true</Optimization>
 		<SignAssembly>True</SignAssembly>
 		<AssemblyOriginatorKeyFile>hird.snk</AssemblyOriginatorKeyFile>
+		<ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+		<ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
 	</PropertyGroup>
 
 	<ItemGroup>
