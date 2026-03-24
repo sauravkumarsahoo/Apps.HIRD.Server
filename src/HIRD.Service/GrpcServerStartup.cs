@@ -1,4 +1,4 @@
-﻿using HIRD.HWiNFOAccess;
+using HIRD.HWiNFOAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 
@@ -9,6 +9,7 @@ namespace HIRD.Service
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<HWiNFOSharedMemoryAccessor>()
+                    .AddSingleton<ISensorProvider, HWiNFOSensorProvider>()
                     .AddLogging()
                     .AddGrpc();
         }
