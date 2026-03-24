@@ -27,7 +27,7 @@ namespace HIRD.ServerUI
         private GrpcServer? _grpcServer;
         private readonly ILoggerFactory _loggerFactory;
         private readonly ILogger<MainForm> _logger;
-        private byte _hwInfoStatus = 3;
+        private volatile byte _hwInfoStatus = 3;
 
         public MainForm(ILoggerFactory loggerFactory)
         {
@@ -165,26 +165,7 @@ namespace HIRD.ServerUI
 
         private void SetSize(bool running, bool error)
         {
-            const int width = 314;
-
-            if (running)
-            {
-                statusGroup.Height = 168;
-
-                Size size = new(width, 401);
-                MinimumSize = size;
-                MaximumSize = size;
-                Height = size.Height;
-            }
-            else
-            {
-                statusGroup.Height = error ? 84 : 48;
-
-                Size size = new(width, error ? 167 : 128);
-                MinimumSize = size;
-                MaximumSize = size;
-                Height = size.Height;
-            }
+            AutoScaleDimensions = new(8F, running ? 13F : error ? 15F : 18F);
         }
 
         private async void StartStopServerButton_CheckedChanged(object sender, EventArgs e)
@@ -194,9 +175,11 @@ namespace HIRD.ServerUI
             menuItem_startServer.Enabled = false;
             menuItem_stopServer.Enabled = false;
 
+            bool isStarting = startStopServerButton.Checked;
+
             try
             {
-                if (startStopServerButton.Checked)
+                if (isStarting)
                 {
                     statusLabel.Text = SERVER_STATE_STARTING;
                     startStopServerButton.Text = PLEASE_WAIT;
@@ -215,7 +198,7 @@ namespace HIRD.ServerUI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message,
-                                $"Error when {(startStopServerButton.Checked ? "stopping" : "starting")} the server",
+                                $"Error when {(isStarting ? "starting" : "stopping")} the server",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
 #if DEBUG
@@ -365,6 +348,11 @@ namespace HIRD.ServerUI
         private void menuItem_Error_Click(object sender, EventArgs e)
         {
             ShowHelp();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

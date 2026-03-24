@@ -31,330 +31,320 @@ namespace HIRD.ServerUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.startStopServerButton = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.compNameText = new System.Windows.Forms.Label();
-            this.ipLabel = new System.Windows.Forms.Label();
-            this.ipText = new System.Windows.Forms.Label();
-            this.connectedClientsList = new System.Windows.Forms.ListBox();
-            this.connectedClientsLabel = new System.Windows.Forms.Label();
-            this.statusIndicator = new System.Windows.Forms.PictureBox();
-            this.statusGroup = new System.Windows.Forms.GroupBox();
-            this.statusLabel = new System.Windows.Forms.Label();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.trayContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuItem_Show = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItem_Settings = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuItem_startServer = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItem_stopServer = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItem_Error = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuItem_Exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.serverInfoGroup = new System.Windows.Forms.GroupBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.statusIndicator)).BeginInit();
-            this.statusGroup.SuspendLayout();
-            this.trayContextMenu.SuspendLayout();
-            this.serverInfoGroup.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            startStopServerButton = new CheckBox();
+            label2 = new Label();
+            compNameText = new Label();
+            ipLabel = new Label();
+            ipText = new Label();
+            connectedClientsList = new ListBox();
+            connectedClientsLabel = new Label();
+            statusIndicator = new PictureBox();
+            statusGroup = new GroupBox();
+            statusLabel = new Label();
+            errorLabel = new Label();
+            notifyIcon = new NotifyIcon(components);
+            trayContextMenu = new ContextMenuStrip(components);
+            menuItem_Show = new ToolStripMenuItem();
+            menuItem_Settings = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            menuItem_startServer = new ToolStripMenuItem();
+            menuItem_stopServer = new ToolStripMenuItem();
+            menuItem_Error = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            menuItem_Exit = new ToolStripMenuItem();
+            toolStripSeparator3 = new ToolStripSeparator();
+            serverInfoGroup = new GroupBox();
+            menuStrip1 = new MenuStrip();
+            settingsToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)statusIndicator).BeginInit();
+            statusGroup.SuspendLayout();
+            trayContextMenu.SuspendLayout();
+            serverInfoGroup.SuspendLayout();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // startStopServerButton
             // 
-            this.startStopServerButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.startStopServerButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.startStopServerButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.startStopServerButton.Location = new System.Drawing.Point(154, 0);
-            this.startStopServerButton.Name = "startStopServerButton";
-            this.startStopServerButton.Size = new System.Drawing.Size(108, 31);
-            this.startStopServerButton.TabIndex = 1;
-            this.startStopServerButton.Text = "Start Server";
-            this.startStopServerButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.startStopServerButton.UseVisualStyleBackColor = true;
-            this.startStopServerButton.CheckedChanged += new System.EventHandler(this.StartStopServerButton_CheckedChanged);
+            startStopServerButton.Appearance = Appearance.Button;
+            startStopServerButton.FlatStyle = FlatStyle.Popup;
+            startStopServerButton.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            startStopServerButton.Location = new Point(154, 0);
+            startStopServerButton.Name = "startStopServerButton";
+            startStopServerButton.Size = new Size(108, 31);
+            startStopServerButton.TabIndex = 1;
+            startStopServerButton.Text = "Start Server";
+            startStopServerButton.TextAlign = ContentAlignment.MiddleCenter;
+            startStopServerButton.UseVisualStyleBackColor = true;
+            startStopServerButton.CheckedChanged += StartStopServerButton_CheckedChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(11, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 12);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Computer Name";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ControlDarkDark;
+            label2.Location = new Point(11, 28);
+            label2.Name = "label2";
+            label2.Size = new Size(78, 12);
+            label2.TabIndex = 4;
+            label2.Text = "Computer Name";
             // 
             // compNameText
             // 
-            this.compNameText.AutoSize = true;
-            this.compNameText.CausesValidation = false;
-            this.compNameText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.compNameText.Location = new System.Drawing.Point(11, 40);
-            this.compNameText.Name = "compNameText";
-            this.compNameText.Size = new System.Drawing.Size(49, 19);
-            this.compNameText.TabIndex = 5;
-            this.compNameText.Text = "Name";
+            compNameText.AutoSize = true;
+            compNameText.CausesValidation = false;
+            compNameText.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            compNameText.Location = new Point(11, 40);
+            compNameText.Name = "compNameText";
+            compNameText.Size = new Size(49, 19);
+            compNameText.TabIndex = 5;
+            compNameText.Text = "Name";
             // 
             // ipLabel
             // 
-            this.ipLabel.AutoSize = true;
-            this.ipLabel.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ipLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ipLabel.Location = new System.Drawing.Point(11, 68);
-            this.ipLabel.Name = "ipLabel";
-            this.ipLabel.Size = new System.Drawing.Size(77, 12);
-            this.ipLabel.TabIndex = 2;
-            this.ipLabel.Text = "Local IP Address";
+            ipLabel.AutoSize = true;
+            ipLabel.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            ipLabel.ForeColor = SystemColors.ControlDarkDark;
+            ipLabel.Location = new Point(11, 68);
+            ipLabel.Name = "ipLabel";
+            ipLabel.Size = new Size(77, 12);
+            ipLabel.TabIndex = 2;
+            ipLabel.Text = "Local IP Address";
             // 
             // ipText
             // 
-            this.ipText.AutoSize = true;
-            this.ipText.CausesValidation = false;
-            this.ipText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ipText.Location = new System.Drawing.Point(10, 80);
-            this.ipText.Name = "ipText";
-            this.ipText.Size = new System.Drawing.Size(85, 19);
-            this.ipText.TabIndex = 3;
-            this.ipText.Text = "192.168.0.x";
+            ipText.AutoSize = true;
+            ipText.CausesValidation = false;
+            ipText.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            ipText.Location = new Point(10, 80);
+            ipText.Name = "ipText";
+            ipText.Size = new Size(85, 19);
+            ipText.TabIndex = 3;
+            ipText.Text = "192.168.0.x";
             // 
             // connectedClientsList
             // 
-            this.connectedClientsList.BackColor = System.Drawing.SystemColors.Window;
-            this.connectedClientsList.Enabled = false;
-            this.connectedClientsList.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.connectedClientsList.FormattingEnabled = true;
-            this.connectedClientsList.HorizontalScrollbar = true;
-            this.connectedClientsList.IntegralHeight = false;
-            this.connectedClientsList.Location = new System.Drawing.Point(11, 62);
-            this.connectedClientsList.Name = "connectedClientsList";
-            this.connectedClientsList.Size = new System.Drawing.Size(251, 93);
-            this.connectedClientsList.TabIndex = 7;
-            this.connectedClientsList.Visible = false;
+            connectedClientsList.BackColor = SystemColors.Window;
+            connectedClientsList.Enabled = false;
+            connectedClientsList.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            connectedClientsList.FormattingEnabled = true;
+            connectedClientsList.HorizontalScrollbar = true;
+            connectedClientsList.IntegralHeight = false;
+            connectedClientsList.Location = new Point(11, 62);
+            connectedClientsList.Name = "connectedClientsList";
+            connectedClientsList.Size = new Size(251, 93);
+            connectedClientsList.TabIndex = 7;
+            connectedClientsList.Visible = false;
             // 
             // connectedClientsLabel
             // 
-            this.connectedClientsLabel.AutoSize = true;
-            this.connectedClientsLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.connectedClientsLabel.Location = new System.Drawing.Point(11, 45);
-            this.connectedClientsLabel.Name = "connectedClientsLabel";
-            this.connectedClientsLabel.Size = new System.Drawing.Size(104, 15);
-            this.connectedClientsLabel.TabIndex = 8;
-            this.connectedClientsLabel.Text = "Connected Clients";
-            this.connectedClientsLabel.Visible = false;
+            connectedClientsLabel.AutoSize = true;
+            connectedClientsLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            connectedClientsLabel.Location = new Point(11, 45);
+            connectedClientsLabel.Name = "connectedClientsLabel";
+            connectedClientsLabel.Size = new Size(104, 15);
+            connectedClientsLabel.TabIndex = 8;
+            connectedClientsLabel.Text = "Connected Clients";
+            connectedClientsLabel.Visible = false;
             // 
             // statusIndicator
             // 
-            this.statusIndicator.BackgroundImage = global::HIRD.Properties.Resources.bullet_red;
-            this.statusIndicator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.statusIndicator.InitialImage = global::HIRD.Properties.Resources.bullet_red;
-            this.statusIndicator.Location = new System.Drawing.Point(134, 14);
-            this.statusIndicator.Name = "statusIndicator";
-            this.statusIndicator.Size = new System.Drawing.Size(16, 16);
-            this.statusIndicator.TabIndex = 9;
-            this.statusIndicator.TabStop = false;
+            statusIndicator.BackgroundImage = Properties.Resources.bullet_red;
+            statusIndicator.BackgroundImageLayout = ImageLayout.Center;
+            statusIndicator.InitialImage = Properties.Resources.bullet_red;
+            statusIndicator.Location = new Point(134, 14);
+            statusIndicator.Name = "statusIndicator";
+            statusIndicator.Size = new Size(16, 16);
+            statusIndicator.TabIndex = 9;
+            statusIndicator.TabStop = false;
             // 
             // statusGroup
             // 
-            this.statusGroup.Controls.Add(this.startStopServerButton);
-            this.statusGroup.Controls.Add(this.connectedClientsLabel);
-            this.statusGroup.Controls.Add(this.statusIndicator);
-            this.statusGroup.Controls.Add(this.connectedClientsList);
-            this.statusGroup.Controls.Add(this.statusLabel);
-            this.statusGroup.Controls.Add(this.errorLabel);
-            this.statusGroup.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.statusGroup.Location = new System.Drawing.Point(12, 31);
-            this.statusGroup.Name = "statusGroup";
-            this.statusGroup.Size = new System.Drawing.Size(274, 168);
-            this.statusGroup.TabIndex = 10;
-            this.statusGroup.TabStop = false;
-            this.statusGroup.Text = "Status";
+            statusGroup.Controls.Add(startStopServerButton);
+            statusGroup.Controls.Add(connectedClientsLabel);
+            statusGroup.Controls.Add(statusIndicator);
+            statusGroup.Controls.Add(connectedClientsList);
+            statusGroup.Controls.Add(statusLabel);
+            statusGroup.Controls.Add(errorLabel);
+            statusGroup.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            statusGroup.Location = new Point(12, 31);
+            statusGroup.Name = "statusGroup";
+            statusGroup.Size = new Size(274, 168);
+            statusGroup.TabIndex = 10;
+            statusGroup.TabStop = false;
+            statusGroup.Text = "Status";
             // 
             // statusLabel
             // 
-            this.statusLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.statusLabel.ForeColor = System.Drawing.Color.Black;
-            this.statusLabel.Location = new System.Drawing.Point(11, 21);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(117, 18);
-            this.statusLabel.TabIndex = 0;
-            this.statusLabel.Text = "status";
+            statusLabel.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            statusLabel.ForeColor = Color.Black;
+            statusLabel.Location = new Point(11, 21);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new Size(117, 18);
+            statusLabel.TabIndex = 0;
+            statusLabel.Text = "status";
             // 
             // errorLabel
             // 
-            this.errorLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.errorLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.errorLabel.Location = new System.Drawing.Point(11, 46);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(251, 33);
-            this.errorLabel.TabIndex = 10;
-            this.errorLabel.Visible = false;
+            errorLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            errorLabel.ForeColor = Color.Firebrick;
+            errorLabel.Location = new Point(11, 46);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(251, 33);
+            errorLabel.TabIndex = 10;
+            errorLabel.Visible = false;
             // 
             // notifyIcon
             // 
-            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon.BalloonTipText = "HIRD";
-            this.notifyIcon.BalloonTipTitle = "status";
-            this.notifyIcon.ContextMenuStrip = this.trayContextMenu;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "HIRD";
-            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon.BalloonTipText = "HIRD";
+            notifyIcon.BalloonTipTitle = "status";
+            notifyIcon.ContextMenuStrip = trayContextMenu;
+            notifyIcon.Icon = (Icon)resources.GetObject("notifyIcon.Icon");
+            notifyIcon.Text = "HIRD";
+            notifyIcon.MouseDoubleClick += notifyIcon_MouseDoubleClick;
             // 
             // trayContextMenu
             // 
-            this.trayContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItem_Show,
-            this.menuItem_Settings,
-            this.toolStripSeparator2,
-            this.menuItem_startServer,
-            this.menuItem_stopServer,
-            this.menuItem_Error,
-            this.toolStripSeparator1,
-            this.menuItem_Exit,
-            this.toolStripSeparator3});
-            this.trayContextMenu.Name = "trayContextMenu";
-            this.trayContextMenu.Size = new System.Drawing.Size(134, 154);
+            trayContextMenu.ImageScalingSize = new Size(28, 28);
+            trayContextMenu.Items.AddRange(new ToolStripItem[] { menuItem_Show, menuItem_Settings, toolStripSeparator2, menuItem_startServer, menuItem_stopServer, menuItem_Error, toolStripSeparator1, menuItem_Exit, toolStripSeparator3 });
+            trayContextMenu.Name = "trayContextMenu";
+            trayContextMenu.Size = new Size(134, 154);
             // 
             // menuItem_Show
             // 
-            this.menuItem_Show.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.menuItem_Show.Name = "menuItem_Show";
-            this.menuItem_Show.Size = new System.Drawing.Size(133, 22);
-            this.menuItem_Show.Text = "Show";
-            this.menuItem_Show.Click += new System.EventHandler(this.menuItem_Show_Click);
+            menuItem_Show.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            menuItem_Show.Name = "menuItem_Show";
+            menuItem_Show.Size = new Size(133, 22);
+            menuItem_Show.Text = "Show";
+            menuItem_Show.Click += menuItem_Show_Click;
             // 
             // menuItem_Settings
             // 
-            this.menuItem_Settings.Name = "menuItem_Settings";
-            this.menuItem_Settings.Size = new System.Drawing.Size(133, 22);
-            this.menuItem_Settings.Text = "Settings";
-            this.menuItem_Settings.Click += new System.EventHandler(this.menuItem_Settings_Click);
+            menuItem_Settings.Name = "menuItem_Settings";
+            menuItem_Settings.Size = new Size(133, 22);
+            menuItem_Settings.Text = "Settings";
+            menuItem_Settings.Click += menuItem_Settings_Click;
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(130, 6);
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(130, 6);
             // 
             // menuItem_startServer
             // 
-            this.menuItem_startServer.Enabled = false;
-            this.menuItem_startServer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuItem_startServer.Name = "menuItem_startServer";
-            this.menuItem_startServer.Size = new System.Drawing.Size(133, 22);
-            this.menuItem_startServer.Text = "Start Server";
-            this.menuItem_startServer.Click += new System.EventHandler(this.menuItem_startServer_Click);
+            menuItem_startServer.Enabled = false;
+            menuItem_startServer.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            menuItem_startServer.Name = "menuItem_startServer";
+            menuItem_startServer.Size = new Size(133, 22);
+            menuItem_startServer.Text = "Start Server";
+            menuItem_startServer.Click += menuItem_startServer_Click;
             // 
             // menuItem_stopServer
             // 
-            this.menuItem_stopServer.Enabled = false;
-            this.menuItem_stopServer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuItem_stopServer.Name = "menuItem_stopServer";
-            this.menuItem_stopServer.Size = new System.Drawing.Size(133, 22);
-            this.menuItem_stopServer.Text = "Stop Server";
-            this.menuItem_stopServer.Click += new System.EventHandler(this.menuItem_stopServer_Click);
+            menuItem_stopServer.Enabled = false;
+            menuItem_stopServer.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            menuItem_stopServer.Name = "menuItem_stopServer";
+            menuItem_stopServer.Size = new Size(133, 22);
+            menuItem_stopServer.Text = "Stop Server";
+            menuItem_stopServer.Click += menuItem_stopServer_Click;
             // 
             // menuItem_Error
             // 
-            this.menuItem_Error.ForeColor = System.Drawing.Color.Crimson;
-            this.menuItem_Error.Name = "menuItem_Error";
-            this.menuItem_Error.Size = new System.Drawing.Size(133, 22);
-            this.menuItem_Error.Text = "Error";
-            this.menuItem_Error.Visible = false;
-            this.menuItem_Error.Click += new System.EventHandler(this.menuItem_Error_Click);
+            menuItem_Error.ForeColor = Color.Crimson;
+            menuItem_Error.Name = "menuItem_Error";
+            menuItem_Error.Size = new Size(133, 22);
+            menuItem_Error.Text = "Error";
+            menuItem_Error.Visible = false;
+            menuItem_Error.Click += menuItem_Error_Click;
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(130, 6);
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(130, 6);
             // 
             // menuItem_Exit
             // 
-            this.menuItem_Exit.Name = "menuItem_Exit";
-            this.menuItem_Exit.Size = new System.Drawing.Size(133, 22);
-            this.menuItem_Exit.Text = "Exit";
-            this.menuItem_Exit.Click += new System.EventHandler(this.menuItem_Exit_Click);
+            menuItem_Exit.Name = "menuItem_Exit";
+            menuItem_Exit.Size = new Size(133, 22);
+            menuItem_Exit.Text = "Exit";
+            menuItem_Exit.Click += menuItem_Exit_Click;
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(130, 6);
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(130, 6);
             // 
             // serverInfoGroup
             // 
-            this.serverInfoGroup.Controls.Add(this.compNameText);
-            this.serverInfoGroup.Controls.Add(this.label2);
-            this.serverInfoGroup.Controls.Add(this.ipLabel);
-            this.serverInfoGroup.Controls.Add(this.ipText);
-            this.serverInfoGroup.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.serverInfoGroup.Location = new System.Drawing.Point(12, 205);
-            this.serverInfoGroup.Name = "serverInfoGroup";
-            this.serverInfoGroup.Size = new System.Drawing.Size(274, 145);
-            this.serverInfoGroup.TabIndex = 15;
-            this.serverInfoGroup.TabStop = false;
-            this.serverInfoGroup.Text = "Server Info";
-            this.serverInfoGroup.Visible = false;
+            serverInfoGroup.Controls.Add(compNameText);
+            serverInfoGroup.Controls.Add(label2);
+            serverInfoGroup.Controls.Add(ipLabel);
+            serverInfoGroup.Controls.Add(ipText);
+            serverInfoGroup.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            serverInfoGroup.Location = new Point(12, 205);
+            serverInfoGroup.Name = "serverInfoGroup";
+            serverInfoGroup.Size = new Size(274, 145);
+            serverInfoGroup.TabIndex = 15;
+            serverInfoGroup.TabStop = false;
+            serverInfoGroup.Text = "Server Info";
+            serverInfoGroup.Visible = false;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(298, 24);
-            this.menuStrip1.TabIndex = 18;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize = new Size(28, 28);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(295, 24);
+            menuStrip1.TabIndex = 18;
+            menuStrip1.Text = "menuStrip1";
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Size = new Size(61, 20);
+            settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(44, 20);
+            helpToolStripMenuItem.Text = "Help";
+            helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 362);
-            this.Controls.Add(this.serverInfoGroup);
-            this.Controls.Add(this.statusGroup);
-            this.Controls.Add(this.menuStrip1);
-            this.HelpButton = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(314, 401);
-            this.MinimumSize = new System.Drawing.Size(314, 401);
-            this.Name = "MainForm";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "HIRD";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnClose);
-            this.Resize += new System.EventHandler(this.MainForm_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.statusIndicator)).EndInit();
-            this.statusGroup.ResumeLayout(false);
-            this.statusGroup.PerformLayout();
-            this.trayContextMenu.ResumeLayout(false);
-            this.serverInfoGroup.ResumeLayout(false);
-            this.serverInfoGroup.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(295, 358);
+            Controls.Add(serverInfoGroup);
+            Controls.Add(statusGroup);
+            Controls.Add(menuStrip1);
+            HelpButton = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
+            MinimumSize = new Size(311, 389);
+            Name = "MainForm";
+            SizeGripStyle = SizeGripStyle.Hide;
+            Text = "HIRD";
+            FormClosing += OnClose;
+            Load += MainForm_Load;
+            Resize += MainForm_Resize;
+            ((System.ComponentModel.ISupportInitialize)statusIndicator).EndInit();
+            statusGroup.ResumeLayout(false);
+            statusGroup.PerformLayout();
+            trayContextMenu.ResumeLayout(false);
+            serverInfoGroup.ResumeLayout(false);
+            serverInfoGroup.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
