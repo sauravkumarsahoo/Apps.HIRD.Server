@@ -14,7 +14,7 @@ namespace HwInfoDisplayTests
             _hWiNFO = new();
         }
 
-        [Fact]
+        [Fact(Skip = "Requires HWiNFO on Windows")]
         public void TestGetComputerInfo()
         {
             var computerInfo = _hWiNFO.GetComputerInfo();
@@ -29,7 +29,7 @@ namespace HwInfoDisplayTests
             Assert.NotEmpty(computerInfo.StorageNames);
         }
 
-        [Fact]
+        [Fact(Skip = "Requires HWiNFO on Windows")]
         public void TestGetStreamData()
         {
             _ = _hWiNFO.GetComputerInfo();
