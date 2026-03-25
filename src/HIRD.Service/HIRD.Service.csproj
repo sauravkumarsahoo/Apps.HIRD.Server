@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+<Project Sdk="Microsoft.NET.Sdk.Worker">
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
@@ -18,6 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\HIRD.Core\HIRD.Core.csproj" />
 	  <ProjectReference Include="..\HIRD.HWiNFOAccess\HIRD.HWiNFOAccess.csproj" />
 	  <ProjectReference Include="..\HIRD.Proto\HIRD.Proto.csproj" />
 	</ItemGroup>

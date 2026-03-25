@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\src\HIRD.HWiNFOAccess\HIRD.HWiNFOAccess.csproj" />
     <ProjectReference Include="..\src\HIRD.Service\HIRD.Service.csproj" />
+    <ProjectReference Include="..\src\HIRD.Core\HIRD.Core.csproj" />
   </ItemGroup>
 
 </Project>

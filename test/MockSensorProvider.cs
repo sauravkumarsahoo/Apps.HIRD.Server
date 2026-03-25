@@ -1,5 +1,5 @@
 using HIRD.Proto;
-using HIRD.Service;
+using HIRD.Core;
 
 namespace HwInfoDisplayTests
 {

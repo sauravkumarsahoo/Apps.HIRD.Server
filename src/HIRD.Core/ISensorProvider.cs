@@ -1,6 +1,6 @@
 using HIRD.Proto;
 
-namespace HIRD.Service
+namespace HIRD.Core
 {
     public interface ISensorProvider : IDisposable
     {

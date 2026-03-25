@@ -1,5 +1,6 @@
 using HIRD.HWiNFOAccess;
 using HIRD.Proto;
+using HIRD.Core;
 
 namespace HIRD.Service
 {

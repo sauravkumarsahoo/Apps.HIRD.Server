@@ -1,6 +1,7 @@
 using Grpc.Core;
 using HIRD.HWiNFOAccess;
 using HIRD.Proto;
+using HIRD.Core;
 using System.Net;
 using System.Threading;
 
@@ -27,7 +28,7 @@ namespace HIRD.Service
 
         public override Task<ComputerInfo> GetComputerInfo(ComputerInfoRequest request, ServerCallContext context)
         {
-            var peer = GetRemoteIP(context);
+            var peer = context?.Peer ?? "unknown";
             _logger.LogInformation("Request received to 'GetComputerInfo()' from {peer}.", peer);
 
             int? interval = _sensorProvider.GetSensorInterval();

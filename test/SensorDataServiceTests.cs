@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using HIRD.Service;
 using HIRD.Proto;
+using HIRD.Core;
 using Grpc.Core;
 using System.Threading.Tasks;
 using System.Threading;
