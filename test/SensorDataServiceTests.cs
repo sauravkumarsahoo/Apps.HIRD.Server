@@ -19,7 +19,7 @@ namespace HwInfoDisplayTests
             providerMock.Setup(p => p.GetSensorInterval()).Returns(2000);
 
             var service = new SensorDataService(loggerMock.Object, providerMock.Object);
-            var result = await service.GetComputerInfo(new ComputerInfoRequest(), null!);
+            var result = await service.GetComputerInfo(new ComputerInfoRequest(), TestServerCallContext.Create());
 
             Assert.Equal("TestPC", result.ComputerName);
         }
