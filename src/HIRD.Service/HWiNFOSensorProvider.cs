@@ -29,18 +29,7 @@ namespace HIRD.Service
                         return int.Parse(sensorIntervalLineText[SensorIntervalLine.Length..]);
                 }
             }
-            catch (System.IO.IOException ex)
-            {
-                System.Diagnostics.Trace.TraceWarning("Failed to read HWiNFO settings file for SensorInterval due to IO error: {0}", ex);
-            }
-            catch (System.UnauthorizedAccessException ex)
-            {
-                System.Diagnostics.Trace.TraceWarning("Access to HWiNFO settings file for SensorInterval was denied: {0}", ex);
-            }
-            catch (System.FormatException ex)
-            {
-                System.Diagnostics.Trace.TraceWarning("Failed to parse SensorInterval from HWiNFO settings file due to format error: {0}", ex);
-            }
+            catch { }
             return null;
         }
 

@@ -27,16 +27,7 @@ namespace HIRD.Service
 
         public override Task<ComputerInfo> GetComputerInfo(ComputerInfoRequest request, ServerCallContext context)
         {
-            string peer = "unknown";
-            try
-            {
-                peer = context?.GetHttpContext()?.Request?.Host.Host ?? "unknown";
-            }
-            catch (Exception ex)
-            {
-                _logger.LogDebug(ex, "Failed to extract peer host from HttpContext; defaulting to 'unknown'.");
-            }
-
+            var peer = context?.Peer ?? "unknown";
             _logger.LogInformation("Request received to 'GetComputerInfo()' from {peer}.", peer);
 
             int? interval = _sensorProvider.GetSensorInterval();
@@ -84,13 +75,14 @@ namespace HIRD.Service
             try
             {
                 if (context == null) return "unknown";
-                IPAddress remoteIpAddress = context.GetHttpContext().Connection.RemoteIpAddress!;
+                IPAddress? remoteIpAddress = context.GetHttpContext().Connection.RemoteIpAddress;
+                if (remoteIpAddress == null) return context.Peer;
                 var ip = remoteIpAddress.IsIPv4MappedToIPv6 ? remoteIpAddress.MapToIPv4().ToString() : remoteIpAddress.ToString();
                 return ip;
             }
             catch
             {
-                return "unknown";
+                return context?.Peer ?? "unknown";
             }
         }
     }
