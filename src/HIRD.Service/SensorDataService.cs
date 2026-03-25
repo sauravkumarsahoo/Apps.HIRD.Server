@@ -32,7 +32,10 @@ namespace HIRD.Service
             {
                 peer = context?.GetHttpContext()?.Request?.Host.Host ?? "unknown";
             }
-            catch { }
+            catch (Exception ex)
+            {
+                _logger.LogDebug(ex, "Failed to extract peer host from HttpContext; defaulting to 'unknown'.");
+            }
 
             _logger.LogInformation("Request received to 'GetComputerInfo()' from {peer}.", peer);
 
