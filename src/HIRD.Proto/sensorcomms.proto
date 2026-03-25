@@ -5,9 +5,9 @@ package sensorcomms;
 
 message ReadingData {
     double current = 1;
-    double min = 2;
-    double max = 3;
-    double avg = 4;
+    optional double min = 2;
+    optional double max = 3;
+    optional double avg = 4;
 }
 
 message ReadingDataStream {
@@ -55,11 +55,14 @@ message ComputerInfo {
     enum SystemType {
         DESKTOP = 0;
         LAPTOP = 1;
+        SERVER = 2;
     }
 
     enum StorageType {
         SATA = 0;
         SSD = 1;
+        NVME = 2;
+        USB = 3;
     }
 
     string computerName = 1;
