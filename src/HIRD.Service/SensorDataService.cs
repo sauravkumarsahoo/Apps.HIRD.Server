@@ -27,13 +27,7 @@ namespace HIRD.Service
 
         public override Task<ComputerInfo> GetComputerInfo(ComputerInfoRequest request, ServerCallContext context)
         {
-            string peer = "unknown";
-            try
-            {
-                peer = context?.GetHttpContext()?.Request?.Host.Host ?? "unknown";
-            }
-            catch { }
-
+            var peer = GetRemoteIP(context);
             _logger.LogInformation("Request received to 'GetComputerInfo()' from {peer}.", peer);
 
             int? interval = _sensorProvider.GetSensorInterval();
