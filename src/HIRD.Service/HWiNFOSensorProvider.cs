@@ -44,6 +44,10 @@ namespace HIRD.Service
             return null;
         }
 
-        public void Dispose() => _accessor.Dispose();
+        public void Dispose()
+        {
+            // Intentionally left blank.
+            // HWiNFOSharedMemoryAccessor is managed by the DI container and will be disposed by it.
+        }
     }
 }
