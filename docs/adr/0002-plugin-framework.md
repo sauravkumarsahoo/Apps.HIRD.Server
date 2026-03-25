@@ -9,24 +9,21 @@ The server currently has a hard dependency on `HWiNFOSharedMemoryAccessor`. This
 ## Decision
 We will define an `ISensorProvider` interface that all hardware monitoring backends must implement. The gRPC `SensorDataService` will interact with this interface rather than a concrete class.
 
-### Proposed Interface
+### Current Interface (Phase 0)
 ```csharp
 public interface ISensorProvider : IDisposable
 {
-    string ProviderId { get; }
-    Task InitializeAsync(CancellationToken ct);
     ComputerInfo GetComputerInfo();
-    ReadingDataStream GetReadingData();
-    bool IsRunning { get; }
+    ReadingDataStream? GetReadingData();
+    int? GetSensorInterval();
 }
 ```
 
 ## Lifecycle
-1. **Discovery:** The server scans for available providers.
-2. **Selection:** A provider is selected based on platform or user configuration.
-3. **Initialization:** The provider initializes its connection to the hardware (e.g., opening shared memory).
-4. **Polling:** The gRPC service calls `GetReadingData()` periodically.
-5. **Termination:** `Dispose()` is called to clean up resources.
+1. **Selection:** A provider is selected based on platform or user configuration (currently hardcoded to HWiNFO on Windows).
+2. **Initialization:** The provider initializes its connection to the hardware (e.g., opening shared memory).
+3. **Polling:** The gRPC service calls `GetReadingData()` periodically.
+4. **Termination:** `Dispose()` is called to clean up resources (if applicable).
 
 ## Consequences
 - **Pros:**

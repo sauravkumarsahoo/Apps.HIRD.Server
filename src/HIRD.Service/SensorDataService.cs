@@ -75,13 +75,14 @@ namespace HIRD.Service
             try
             {
                 if (context == null) return "unknown";
-                IPAddress remoteIpAddress = context.GetHttpContext().Connection.RemoteIpAddress!;
+                IPAddress? remoteIpAddress = context.GetHttpContext().Connection.RemoteIpAddress;
+                if (remoteIpAddress == null) return context.Peer;
                 var ip = remoteIpAddress.IsIPv4MappedToIPv6 ? remoteIpAddress.MapToIPv4().ToString() : remoteIpAddress.ToString();
                 return ip;
             }
             catch
             {
-                return "unknown";
+                return context?.Peer ?? "unknown";
             }
         }
     }
