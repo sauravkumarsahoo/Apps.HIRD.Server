@@ -20,7 +20,7 @@ echo:
 echo [ %publish_msg% ]
 echo:
 
-dotnet publish /p:Version=%v% --framework net8.0-windows --runtime win-x64 --configuration Release --no-self-contained
+dotnet publish /p:Version=%v% --framework net10.0-windows --runtime win-x64 --configuration Release --no-self-contained
 
 cd ..\..
 

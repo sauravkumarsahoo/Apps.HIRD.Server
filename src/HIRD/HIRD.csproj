@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net8.0-windows</TargetFramework>
+		<TargetFramework>net10.0-windows</TargetFramework>
 		<Authors>Saurav Kumar Sahoo (clicksrv)</Authors>
 		<Nullable>enable</Nullable>
 		<UseWindowsForms>true</UseWindowsForms>

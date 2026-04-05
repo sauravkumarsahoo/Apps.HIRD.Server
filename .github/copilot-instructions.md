@@ -8,11 +8,11 @@
 
 | Project | Type | Target | Purpose |
 |---|---|---|---|
-| `HIRD` | WinForms executable | `net8.0-windows` | System-tray UI, controls server lifecycle |
-| `HIRD.Service` | Worker Service | `net8.0` | Kestrel-hosted gRPC server |
-| `HIRD.HWiNFOAccess` | Class Library | `net8.0` | Reads HWiNFO64 Shared Memory via P/Invoke |
-| `HIRD.Proto` | Class Library | `net8.0` | Protobuf definitions + generated gRPC stubs |
-| `HIRD.ServerTests` | xUnit test project | `net8.0` | Integration tests (require HWiNFO64 running) |
+| `HIRD` | WinForms executable | `net10.0-windows` | System-tray UI, controls server lifecycle |
+| `HIRD.Service` | Worker Service | `net10.0` | Kestrel-hosted gRPC server |
+| `HIRD.HWiNFOAccess` | Class Library | `net10.0` | Reads HWiNFO64 Shared Memory via P/Invoke |
+| `HIRD.Proto` | Class Library | `net10.0` | Protobuf definitions + generated gRPC stubs |
+| `HIRD.ServerTests` | xUnit test project | `net10.0` | Integration tests (require HWiNFO64 running) |
 
 ## Architecture
 
